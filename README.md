@@ -3,6 +3,7 @@
 Dashboard **forecasting mingguan IHSG** (Jakarta Composite Index / `^JKSE`) yang membandingkan model statistik klasik (Holt-Winters, Prophet) dengan model machine learning berbasis fitur (Random Forest, XGBoost), lalu men-deploy model terbaik lewat API FastAPI + dashboard interaktif.
 
 > 🔗 **Live demo:** _https://forecasting-ishg.vercel.app/_
+> 🔗 **Sember data:** _https://finance.yahoo.com/quote/%5EJKSE/history/_
 
 ---
 
