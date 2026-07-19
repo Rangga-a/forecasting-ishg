@@ -1,0 +1,328 @@
+:root {
+    --bg: #0B1120;
+    --card: #151C2E;
+    --card-border: #232C42;
+    --text: #E7ECF3;
+    --muted: #8B96A8;
+    --blue: #60A5FA;
+    --green: #34D399;
+    --green-dim: rgba(52, 211, 153, .12);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+}
+
+.wrap{
+    max-width:1200px;
+    margin:auto;
+    padding:32px 20px 60px;
+}
+
+
+header{
+    margin-bottom:28px;
+}
+
+header h1{
+    font-size:30px;
+    margin-bottom:8px;
+    font-weight:700;
+}
+
+header p{
+    color:var(--muted);
+    font-size:15px;
+    line-height:1.6;
+}
+
+header small{
+    display:block;
+    margin-top:10px;
+    color:var(--muted);
+    font-size:13px;
+}
+
+
+.card{
+    background:var(--card);
+    border:1px solid var(--card-border);
+    border-radius:14px;
+    padding:20px;
+}
+
+
+.metrics-row{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    margin-bottom:22px;
+}
+
+.metric-label{
+    font-size:12px;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    margin-bottom:8px;
+}
+
+.metric-value{
+    font-size:26px;
+    font-weight:700;
+    color:var(--green);
+}
+
+
+.panel{
+    margin-bottom:22px;
+}
+
+.panel-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    flex-wrap:wrap;
+    gap:16px;
+    margin-bottom:18px;
+}
+
+.panel-header h2{
+    font-size:18px;
+    font-weight:600;
+}
+
+
+.control-group{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    align-items:flex-end;
+}
+
+
+.history-group,
+.horizon-group{
+
+    display:flex;
+    gap:8px;
+
+    background:var(--bg);
+    border:1px solid var(--card-border);
+    border-radius:10px;
+    padding:5px;
+
+}
+
+.history-btn,
+.horizon-btn{
+
+    border:none;
+    background:transparent;
+
+    color:var(--muted);
+
+    padding:8px 16px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+    font-size:13px;
+
+}
+
+.history-btn:hover,
+.horizon-btn:hover{
+
+    color:var(--text);
+
+}
+
+.history-btn.active,
+.horizon-btn.active{
+
+    background:var(--green-dim);
+    color:var(--green);
+
+}
+
+
+.chart-wrap{
+
+    position:relative;
+    width:100%;
+    height:420px;
+
+}
+
+canvas{
+
+    width:100% !important;
+    height:100% !important;
+
+}
+
+
+table{
+
+    width:100%;
+    border-collapse:collapse;
+
+}
+
+th,
+td{
+
+    padding:12px;
+
+    border-bottom:1px solid var(--card-border);
+
+}
+
+th{
+
+    color:var(--muted);
+
+    text-transform:uppercase;
+
+    font-size:12px;
+
+    text-align:left;
+
+}
+
+td.value{
+
+    color:var(--green);
+
+    font-weight:600;
+
+    font-variant-numeric:tabular-nums;
+
+}
+
+.loading{
+
+    text-align:center;
+
+    color:var(--muted);
+
+    padding:25px;
+
+}
+
+
+.footer{
+
+    margin-top:40px;
+
+    padding:25px;
+
+    text-align:center;
+
+    color:var(--muted);
+
+    border-top:1px solid var(--card-border);
+
+}
+
+.footer a{
+
+    color:var(--green);
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+.footer a:hover{
+
+    color:var(--blue);
+
+}
+
+
+::-webkit-scrollbar{
+
+    width:8px;
+    height:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:var(--bg);
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#3A455E;
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#55627F;
+
+}
+
+
+@media(max-width:900px){
+
+    .metrics-row{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .panel-header{
+
+        flex-direction:column;
+        align-items:flex-start;
+
+    }
+
+    .control-group{
+
+        width:100%;
+        align-items:stretch;
+
+    }
+
+    .history-group,
+    .horizon-group{
+
+        width:100%;
+        overflow-x:auto;
+
+    }
+
+    .history-btn,
+    .horizon-btn{
+
+        flex:1;
+        white-space:nowrap;
+
+    }
+
+    .chart-wrap{
+
+        height:300px;
+
+    }
+
+}

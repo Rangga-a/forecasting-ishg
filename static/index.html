@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dashboard forecasting mingguan IHSG (Jakarta Composite Index) menggunakan Random Forest Regression, lengkap dengan grafik historis dan metrik evaluasi model.">
+    <meta name="theme-color" content="#0B1120">
+    <title>IHSG Weekly Forecast Dashboard</title>
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230B1120'/%3E%3Cpath d='M15 70 L38 45 L55 60 L85 25' stroke='%2334D399' stroke-width='8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div class="wrap">
+        <header>
+            <h1>IHSG Weekly Forecast Dashboard</h1>
+            <p>
+                Jakarta Composite Index (^JKSE)
+                <br>
+                <strong>Model :</strong>
+                <span id="modelName">Loading...</span>
+            </p>
+            <small>
+                Weekly forecasting using Random Forest Regression
+            </small>
+        </header>
+
+        <div class="metrics-row">
+
+            <div class="card">
+                <div class="metric-label">MAE</div>
+                <div class="metric-value" id="metricMae">-</div>
+            </div>
+
+            <div class="card">
+                <div class="metric-label">RMSE</div>
+                <div class="metric-value" id="metricRmse">-</div>
+            </div>
+
+            <div class="card">
+                <div class="metric-label">MAPE</div>
+                <div class="metric-value" id="metricMape">-</div>
+            </div>
+
+        </div>
+
+
+        <div class="card panel">
+            <div class="panel-header">
+                <h2>Historical & Weekly Forecast</h2>
+
+                <div class="control-group">
+
+                    <span class="control-title">
+                        Historical Data
+                    </span>
+
+                    <div
+                        class="history-group"
+                        id="historyGroup">
+
+                        <button
+                            class="history-btn"
+                            data-years="1">
+                            1 Tahun
+                        </button>
+                        <button
+                            class="history-btn"
+                            data-years="3">
+                            3 Tahun
+                        </button>
+                        <button
+                            class="history-btn active"
+                            data-years="5">
+                            5 Tahun
+                        </button>
+
+                        <button
+                            class="history-btn"
+                            data-years="20">
+                            Semua
+                        </button>
+                    </div>
+                </div>
+
+                <div class="control-group">
+
+                    <span class="control-title">
+                        Forecast Horizon
+                    </span>
+
+                    <div
+                        class="horizon-group"
+                        id="horizonGroup">
+                        <button
+                            class="horizon-btn"
+                            data-horizon="4">
+                            4 Minggu
+                        </button>
+
+                        <button
+                            class="horizon-btn"
+                            data-horizon="8">
+                            8 Minggu
+                        </button>
+
+                        <button
+                            class="horizon-btn active"
+                            data-horizon="12">
+                            12 Minggu
+                        </button>
+
+                        <button
+                            class="horizon-btn"
+                            data-horizon="24">
+                            24 Minggu
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-wrap">
+                <canvas id="chart"></canvas>
+            </div>
+        </div>
+
+
+        <div class="card panel">
+            <div class="panel-header">
+                <h2>Forecast Result</h2>
+            </div>
+
+            <div id="tableWrap">
+                <div class="loading">
+                    Memuat...
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>
+            Developed by
+            <a
+                href="https://github.com/Rangga-a"
+                target="_blank"
+                rel="noopener noreferrer">
+                Rangga-a
+            </a>
+        </p>
+
+    </footer>
+    <script src="/static/app.js"></script>
+
+</body>
+</html>
