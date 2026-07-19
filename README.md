@@ -20,7 +20,7 @@ Dashboard **forecasting mingguan IHSG** (Jakarta Composite Index / `^JKSE`) yang
 
 ## 🧠 Model & Metodologi
 
-Alur lengkap ada di [`notebook/forecasting_ihsg_mingguan_revisi.ipynb`](notebook/forecasting_ihsg_mingguan_revisi.ipynb):
+Alur lengkap ada di [`notebook/forecasting_ihsg_mingguan_revisi.ipynb`](notebook/forecasting_ihsg.ipynb):
 
 1. **Data Collection** — data harian `^JKSE` 20 tahun terakhir (2006–2026, ±4.842 baris) dari Yahoo Finance via `yfinance`.
 2. **Preprocessing** — parsing tanggal, sort kronologis, drop duplikat, resample ke **mingguan** (`W-FRI`, ditutup tiap Jumat) → ±1.044 baris.
@@ -85,8 +85,8 @@ Butuh Python 3.11+.
 
 ```bash
 # 1. Clone repo
-git clone <url-repo-kamu>
-cd <nama-repo>
+git clone 
+cd 
 
 # 2. Buat virtual environment
 python -m venv venv
