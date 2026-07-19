@@ -59,7 +59,7 @@ Alur lengkap ada di [`notebook/forecasting_ihsg_mingguan_revisi.ipynb`](notebook
 ```
 .
 ├── main.py                # FastAPI app (serve API + frontend statis)
-├── requirements.txt        # Dependencies backend (versi di-pin)
+├── requirements.txt        # Dependencies backend
 ├── Dockerfile               # Untuk deploy via container
 ├── Procfile                  # Untuk platform bergaya Heroku/Railway
 ├── .gitignore
@@ -72,7 +72,7 @@ Alur lengkap ada di [`notebook/forecasting_ihsg_mingguan_revisi.ipynb`](notebook
 │   ├── style.css
 │   └── app.js
 └── notebook/
-    └── forecasting_ihsg_mingguan_revisi.ipynb   # Full workflow: EDA → modeling → evaluation
+    └── forecasting_ihsg.ipynb   # Full workflow: EDA → modeling → evaluation
 ```
 
 ---
